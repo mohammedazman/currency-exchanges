@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<section class="border">
+<h2>Currency Exchange</h2>
+<input type="number" id="input_count" class="input_count">
+<select id="select_currency" class="select_currency" onchange="changer()">
+    <option value="1" >USA</option>
+    <option value="2" >Saudi</option>
+    <option value="3" >UK</option>
+    <option  value="4">Yemen</option>
+</select>
+
+<table>
+    <tr>
+        <th>Currency</th>
+        <th>Exchange</th>
+        <th>Total</th>
+    </tr>
+    <tr>
+        <td>Saudi</td>
+        <td id="SAU1"></td>
+        <td id="SAU"></td>
+    </tr>
+    <tr>
+        <td>USA</td>
+        <td id="USA1"></td>
+        <td id="USA"></td>
+    </tr>
+    <tr>
+        <td>UK</td>
+        <td id="UK1"></td>
+        <td  id="UK"></td>
+    </tr>
+    <tr>
+        <td>Yemen</td>
+        <td id="YEM1"></td>
+        <td id="YEM" ></td>
+    </tr>
+</table>
+</section>
+<script>
+
+
+    var yem, sau, usa, uk,inp,se,yem1,sau1,usa1,uk1;
+    se=document.getElementById("select_currency");
+    function init()
+    {
+
+        inp=document.getElementById("input_count");
+        yem = document.getElementById("YEM");
+        sau = document.getElementById("SAU");
+        usa = document.getElementById("USA");
+        uk = document.getElementById("UK");
+        yem1 = document.getElementById("YEM1");
+        sau1 = document.getElementById("SAU1");
+        usa1 = document.getElementById("USA1");
+        uk1 = document.getElementById("UK1");
+
+
+    }
+
+    function YEMfunc()
+    {
+        fill();
+        sau.innerText = parseFloat(inp.value) / 160;
+        usa.innerText= parseFloat(inp.value) / 560;
+        uk.innerText = parseFloat(inp.value) / 610;
+        sau1.innerText = 160;
+        usa1.innerText=  560;
+        uk1.innerText =  610;
+
+    }
+
+    function SAUfunc()
+    {
+        fill();
+        yem.innerText = parseFloat(inp.value) * 160;
+        usa.innerText = parseFloat(inp.value) / 5.6;
+        uk.innerText = parseFloat(inp.value) / 6.1 ;
+        yem1.innerText =  160;
+        usa1.innerText =  5.6;
+        uk1.innerText =  6.1 ;
+
+    }
+
+    function USAfunc()
+    {
+        fill();
+        yem.innerText = parseFloat(inp.value) * 560;
+        sau.innerText = parseFloat(inp.value) * 5.6;
+        uk.innerText = parseFloat(inp.value) / 1.1;
+        yem1.innerText = 560;
+        sau1.innerText = 5.6;
+        uk1.innerText = 1.1;
+
+    }
+
+
+
+    function UKfunc()
+    {
+        fill();
+        yem.innerText = parseFloat(inp.value) * 610;
+        sau.innerText = parseFloat(inp.value) * 6.1;
+        usa.innerText = parseFloat(inp.value) * 1.1;
+        yem1.innerText =  610;
+        sau1.innerText =  6.1;
+        usa1.innerText = 1.1;
+
+    }
+function fill()
+{
+    yem.innerText ="";
+    sau.innerText="";
+    usa.innerText="";
+    uk.innerText="";
+    yem1.innerText ="";
+    sau1.innerText="";
+    usa1.innerText="";
+    uk1.innerText="";
+}
+    init();
+    function changer () {
+
+        if (se.value==1){
+            USAfunc();
+        }
+        else if (se.value==2)
+        {
+            SAUfunc();
+        }
+        else if(se.value==3){
+           UKfunc();
+        }
+        else if (se.value==4){
+            YEMfunc();
+        }
+        else{
+
+        }
+    };
+
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+﻿table {
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 5px;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+
+}
+tr{
+    border-radius: 5px;
+}
+tr{
+    background-color: #f2f0f0;
+    color: #333;
+}
+
+th {
+    background-color: #8ba9af;
+    color: white;
+}
+.input_count{
+    width: 30%;
+    height: 30px;
+    margin:10px 40px 40px 40px ;
+    border-radius: 5px;
+}
+.select_currency{
+    text-align: center;
+    width: 30%;
+    height: 30px;
+    margin:10px 40px 40px 40px ;
+    border-radius: 5px;
+
+}
+.border{
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+}
